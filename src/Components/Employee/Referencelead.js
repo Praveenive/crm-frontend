@@ -20,7 +20,7 @@ export default function Referencelead({employeeleads,setEmployeeleads}) {
         const newlead = {
             leadname,contactno,standard,schoolname,board,location,parentname,request
         }
-        const response= await fetch(`https://crm-backend-fnei-praveenive.vercel.app/leads/add`,{
+        const response= await fetch(`https://crm-backend-opgx-praveenive.vercel.app/leads/add`,{
             method:'POST',
             body:JSON.stringify(newlead),
             headers:{

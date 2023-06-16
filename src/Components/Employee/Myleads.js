@@ -15,10 +15,13 @@ export default function Myleads({employeeleads,setEmployeeleads}) {
         let token = localStorage.getItem("token");
         setTokencopy(token)
         const fetchEmployeeLeads = async()=>{
-            const response = await fetch(`https://crm-backend-fnei-praveenive.vercel.app/leads/myleads`,
+           let params = {
+                "id": localStorage.getItem("id")
+             };
+            const response = await fetch(`https://crm-backend-opgx-praveenive.vercel.app/leads/myleads`,
             {
                 method:"GET",
-                body : { "id" : localStorage.getItem("id")},
+                body: JSON.stringify(params),
                 headers:{
                     "x-auth-token":token
                 }
