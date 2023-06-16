@@ -24,7 +24,7 @@ useEffect(()=>{
 
 const employeeadding = async()=>{
     const newemp = {firstname,lastname,email,password}
-    const res = await fetch(`https://crm-backend-gb9s-praveenive.vercel.app/emp/addemployee`,{
+    const res = await fetch(`https://crm-backend-fnei-praveenive.vercel.app/emp/addemployee`,{
         method:"POST",
         body:JSON.stringify(newemp),
         headers:{

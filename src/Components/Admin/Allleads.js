@@ -14,7 +14,7 @@ export default function Allleads() {
       }
       let token  = localStorage.getItem("token");
       const fetchallData = async()=>{
-        const response = await fetch(`https://crm-backend-gb9s-praveenive.vercel.app/leads/allleads`,{
+        const response = await fetch(`https://crm-backend-fnei-praveenive.vercel.app/leads/allleads`,{
             method:"GET",
             headers:{
                 "x-auth-token":token

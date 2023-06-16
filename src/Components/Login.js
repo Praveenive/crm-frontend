@@ -11,7 +11,7 @@ export default function Login() {
   const navigate = useNavigate()
   const handleLogin = async()=>{
     const loginDetails={email,password}
-    const response = await fetch(`https://crm-backend-gb9s-praveenive.vercel.app/user/login`,{
+    const response = await fetch(`https://crm-backend-fnei-praveenive.vercel.app/user/login`,{
       method:"POST",
       body:JSON.stringify(loginDetails),
       headers:{
@@ -25,7 +25,7 @@ if (!data.token) {
   setError(data.data);
 } else {
   const role = data.role;
-
+  localStorage.setItem("id", data.id)
   if (role === "admin") {
     setError("");
     localStorage.setItem("token", data.token);
@@ -49,7 +49,7 @@ if (!data.token) {
       <p>Please enter your login details</p>
   
       <TextField id="email" label="Enter your email" value={email} onChange={(e)=>setEmail(e.target.value)}  variant="filled" /><br/><br/>
-      <TextField id="password" label="Enter Password" variant="filled" value={password} onChange={(e)=>setPassword(e.target.value)}/>  <br/><br/>
+      <TextField type="password"  label="Enter Password" variant="filled" value={password} onChange={(e)=>setPassword(e.target.value)}/>  <br/><br/>
       <Button variant="contained" onClick={handleLogin}>Login</Button>
       <p>Don't have an Employee account yet?</p>
       <Button variant="text" onClick={()=>navigate("/signup")}>Signup</Button>
