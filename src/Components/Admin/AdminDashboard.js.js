@@ -19,17 +19,20 @@ const bull = (
 );
 
 
-export default function AdminDashboard() {
+export default function AdminDashboard({managerCount,setManagerCount,employeeCount,genleads,setEmloyeeCount,setGenleads,reqemp,setReqemp,reqleads,setReqleads}) {
 const navigate = useNavigate()
+
 
   return (
     <Adminbase>
       <h1>Hello PRAVEEN</h1>
       <Card sx={{ minWidth: 275 }}>
       <CardContent>
-        <h3>Total Mangers Count :3</h3>
-        <h3>Total Employees Count:25</h3>
-        <h3>Total Leads Generated Count:500</h3>
+        <h3>Total Mangers Count :{managerCount}</h3>
+        <h3>Total Employees Count:{employeeCount}</h3>
+        <h3>Total Leads Generated Count:{genleads}</h3>
+        <h3>Requested Employee By Manager :{reqemp}</h3>
+        <h3>Requested Leads Our Team :{reqleads}</h3>
       </CardContent>
       <CardActions>
         <Button variant="contained"  onClick={()=>navigate("/takeaction")}>Take Action</Button>

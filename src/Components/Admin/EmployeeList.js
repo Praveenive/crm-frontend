@@ -26,6 +26,7 @@ export default function EmployeeList() {
             setError(data.message)
         }
         setEmployee(data.data)
+        console.log(employee)
         setError("")
 
       }
@@ -36,6 +37,7 @@ export default function EmployeeList() {
 
   return (
     <Adminbase>
+      <div className='ref'>  <Button variant='contained' onClick={()=>navigate("/addemployee")}>Add Employee</Button></div>
        {employee&& (
             <div>
                 {employee?.map((data,idx)=>(

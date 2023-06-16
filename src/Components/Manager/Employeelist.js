@@ -1,10 +1,11 @@
 import { Paper, Typography,Button } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import Adminbase from '../../Base/Adminbase'
+import ManagerBase from '../../Base/ManagerBase'
 
-export default function Managerlist() {
-    const [manager,setManager] = useState([])
+
+export default function Employeelist() {
+    const [employee,setEmployee] = useState([])
     const navigate = useNavigate()
     const [error,setError] = useState("")
     const [tokencopy,setTokencopy] = useState("")
@@ -14,31 +15,34 @@ export default function Managerlist() {
         }
         let token = localStorage.getItem("token");
         setTokencopy(token)
-      async function fetchAllManager() {
-            const response = await fetch(`http://localhost:9090/emp/allmanager`, {
-                method: "GET",
-                headers: {
-                    "x-auth-token": tokencopy
-                }
-            })
-            const data = await response.json()
-            if (!data.data) {
-                setError(data.message)
+      const fetchAllemployee = async()=>{
+        const  response = await fetch(`http://localhost:9090/emp/allemployee`,{
+            method:"GET",
+            headers:{
+                "x-auth-token":tokencopy
             }
-            setManager(data.data)
-            setError("")
-
+        })
+        const data = await response.json();
+        if(!data.data){
+            setError(data.message)
         }
+        setEmployee(data.data)
+        console.log(employee)
+        setError("")
+
+      }
     
-    fetchAllManager()
+    fetchAllemployee()
     },[])
 
 
   return (
-    <Adminbase>
-       {manager&& (
+    <ManagerBase>
+        <div className='ref'>  <Button variant='contained' onClick={()=>navigate("/man-addemployee")}>
+            Add Employee</Button></div>
+       {employee&& (
             <div>
-                {manager?.map((data,idx)=>(
+                {employee?.map((data,idx)=>(
                     <Paper
                     elevation={6}
                     key ={data._id}>
@@ -46,7 +50,7 @@ export default function Managerlist() {
                         <p>lastname:{data.lastname}</p>
                         <p>Email Id:{data.email}</p>
                         <p>Role:{data.type_of_user}</p>
-                        <h4>Manager Status:</h4>
+                        <h4>Employee Status:Active</h4>
             <Button variant="contained">Take Action</Button>
                     </Paper>
                 ))}
@@ -56,6 +60,6 @@ export default function Managerlist() {
         <Typography color={"danger"}>
            {error}
         </Typography> : "" }
-    </Adminbase>
+    </ManagerBase>
   )
 }
