@@ -11,7 +11,7 @@ export default function Updatelead() {
   const navigate = useNavigate()
   const updatedlead =async()=>{
     const updated ={leadstatus}
-    const res = await fetch(`http://localhost:9090/leads/edit/${id}`,{
+    const res = await fetch(`https://crm-backend-gb9s-praveenive.vercel.app/leads/edit/${id}`,{
       method:"PUT",
       body:JSON.stringify(updated),
       headers:{

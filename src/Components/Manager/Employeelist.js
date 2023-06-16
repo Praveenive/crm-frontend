@@ -16,7 +16,7 @@ export default function Employeelist() {
         let token = localStorage.getItem("token");
         setTokencopy(token)
       const fetchAllemployee = async()=>{
-        const  response = await fetch(`http://localhost:9090/emp/allemployee`,{
+        const  response = await fetch(`https://crm-backend-gb9s-praveenive.vercel.app/emp/allemployee`,{
             method:"GET",
             headers:{
                 "x-auth-token":tokencopy

@@ -15,7 +15,7 @@ export default function Myleads({employeeleads,setEmployeeleads}) {
         let token = localStorage.getItem("token");
         setTokencopy(token)
         const fetchEmployeeLeads = async()=>{
-            const response = await fetch(`http://localhost:9090/leads/myleads`,
+            const response = await fetch(`https://crm-backend-gb9s-praveenive.vercel.app/leads/myleads`,
             {
                 method:"GET",
                 headers:{
