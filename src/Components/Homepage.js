@@ -7,7 +7,11 @@ export default function Homepage() {
   return (
     <div className='homePage'>
         <h1>Welcome to CRM Application</h1>
-        <Button variant="contained" onClick={()=>navigate("/login")}>Login</Button>
+      
+        <Button variant="contained" onClick={()=>navigate("/login")}>Admin Login</Button>{"  "}
+        <Button variant="contained" onClick={()=>navigate("/login")}>Manager Login</Button>{" "}
+        <Button variant="contained" onClick={()=>navigate("/login")}>Employee Login</Button>
     </div>
+    
   )
 }

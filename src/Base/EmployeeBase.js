@@ -22,35 +22,18 @@ async function handleLogout(){
     <IconButton 
     edge="end"
      color="inherit"
-     onClick={()=>navigate("/admindashboard")}
+     onClick={()=>navigate("/employeedashboard")}
       aria-label="dashboard" sx={{ mr: 2 }}>  
      Dashboard
     </IconButton>
 
     <IconButton 
     edge="end" 
-    color="inherit"
-     aria-label="students"
-     onClick={()=>navigate("/user")}
-      sx={{ mr: 2 }}>  
-      ManagersList
-    </IconButton>
-
-    <IconButton 
-    edge="end" 
     color="inherit" 
     aria-label="add students" 
-    onClick={()=>navigate("/login")}
+    onClick={()=>navigate("/employeeleads")}
     sx={{ mr: 2 }}>  
-      Employee List
-    </IconButton>
-    <IconButton 
-    edge="end" 
-    color="inherit" 
-    aria-label="add students" 
-    onClick={()=>navigate("/login")}
-    sx={{ mr: 2 }}>  
-      Employee Request
+      My Leads
     </IconButton>
     <IconButton 
     edge="end" 
