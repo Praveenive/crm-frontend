@@ -7,21 +7,21 @@ export default function Myleads({employeeleads,setEmployeeleads}) {
     
     const navigate = useNavigate()
     const [error,setError] = useState("")
-    const [tokencopy,setTokencopy] = useState("")
+    
     useEffect(()=>{
         if(!localStorage.getItem("token")){
             navigate("/login",{replace:true})
         }
         let token = localStorage.getItem("token");
-        setTokencopy(token)
         const fetchEmployeeLeads = async()=>{
            let params = {
                 "id": localStorage.getItem("id")
              };
-            const response = await fetch(`https://crm-backend-opgx-praveenive.vercel.app/leads/myleads`,
+             let url = `https://crm-backend-opgx-praveenive.vercel.app/leads/myleads`;
+             url.search = new URLSearchParams(params).toString();
+            const response = await fetch(url,
             {
                 method:"GET",
-                body: JSON.stringify(params),
                 headers:{
                     "x-auth-token":token
                 }
