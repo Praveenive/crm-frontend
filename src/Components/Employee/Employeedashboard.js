@@ -13,7 +13,7 @@ export default function Employeedashboard() {
       }
       let token  = localStorage.getItem("token");
       const fetchallData = async()=>{
-        const response = await fetch(`https://crm-backend-opgx-praveenive.vercel.app/leads/allleads`,{
+        const response = await fetch(`https://crm-backend-praveenive.vercel.app/leads/allleads`,{
             method:"GET",
             headers:{
                 "x-auth-token":token

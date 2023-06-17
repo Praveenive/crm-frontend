@@ -15,7 +15,7 @@ export default function Managerlist() {
         let token = localStorage.getItem("token");
         setTokencopy(token)
       async function fetchAllManager() {
-            const response = await fetch(`https://crm-backend-opgx-praveenive.vercel.app/emp/allmanager`, {
+            const response = await fetch(`https://crm-backend-praveenive.vercel.app/emp/allmanager`, {
                 method: "GET",
                 headers: {
                     "x-auth-token": tokencopy

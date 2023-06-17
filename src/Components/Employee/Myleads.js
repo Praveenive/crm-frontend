@@ -18,7 +18,7 @@ export default function Myleads({employeeleads,setEmployeeleads}) {
            let params = {
                 "id": localStorage.getItem("id")
              };
-             let url= new URL('https://crm-backend-opgx-praveenive.vercel.app/leads/myleads');
+             let url= new URL('https://crm-backend-praveenive.vercel.app/leads/myleads');
              url.search = new URLSearchParams(params).toString();
             const response = await fetch(url,
             {

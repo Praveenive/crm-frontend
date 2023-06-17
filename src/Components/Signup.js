@@ -11,7 +11,7 @@ export default function Signup() {
     const newEmployee = {
       firstname,lastname,email,password
     }
-    const response = await fetch(`https://crm-backend-opgx-praveenive.vercel.app/user/signup`,{
+    const response = await fetch(`https://crm-backend-praveenive.vercel.app/user/signup`,{
       method:"POST",
       body:JSON.stringify(newEmployee),
       headers:{
