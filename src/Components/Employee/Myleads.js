@@ -8,6 +8,7 @@ export default function Myleads({employeeleads,setEmployeeleads}) {
     const navigate = useNavigate()
     const [error,setError] = useState("")
     
+    
     useEffect(()=>{
         if(!localStorage.getItem("token")){
             navigate("/login",{replace:true})
@@ -38,7 +39,7 @@ export default function Myleads({employeeleads,setEmployeeleads}) {
     },[])
   return (
     <EmployeeBase>
-       <div className='ref'> <Button variant="contained" onClick={()=>navigate(`/add/${tokencopy}`)}>
+       <div className='ref'> <Button variant="contained" onClick={()=>navigate(`/add/${localStorage.getItem("token")}`)}>
         Referral Lead</Button></div>
     {employeeleads&& (
             <div>
